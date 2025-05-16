@@ -6,6 +6,7 @@ import tldextract
 import json
 
 # Helper: Validate a URL
+dict={}
 def is_valid_url(url):
     try:
         result = urlparse(url)
@@ -103,7 +104,11 @@ if st.button("🚀 Extract Modules"):
         st.error("Please enter a valid URL.")
     else:
         with st.spinner("Processing..."):
-            result = process_documentation(user_url)
+            #Check if the URL is already """PROCESSED OR NOT"""
+            if user_url in dict:
+                result= dict[user_url]
+            else:   
+                result = process_documentation(user_url)
 
         if not result:
             st.warning("No valid modules found or site could not be parsed.")
@@ -112,6 +117,7 @@ if st.button("🚀 Extract Modules"):
             json_output = json.dumps(result, indent=2)
 
             # Show structured results
+            
             for module in result:
                 with st.expander(f"📂 {module['module']}"):
                     st.markdown(f"**Description:** {module['Description']}")

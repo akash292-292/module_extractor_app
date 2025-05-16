@@ -17,7 +17,7 @@ This Streamlit-based app extracts top-level **modules** and **submodules** from 
 🛠️ Setup Instructions
 
 1. Clone the repo
-2. Install the requirements (pip install requirements.txt)
+2. Install the requirements (pip install -r requirements.txt)
 3. Run the Command to start the app(streamlit run streamlit_app.py)
 4. Insert the URL
 5. After the success notofication scroll down to see the download json button

@@ -90,11 +90,9 @@ def process_documentation(url):
 
     return modules
 
-# -----------------------------------
 # Streamlit UI
-# -----------------------------------
-st.set_page_config(page_title="AI Help Doc Extractor", layout="wide")
-st.title("📘 Help Documentation Extractor (Shallow Crawl)")
+st.set_page_config(page_title="Doc Websited Info Extractor", layout="wide")
+st.title("📘Documentation Extractor")
 st.markdown("Paste a help site homepage URL (like https://help.instagram.com/) to extract top-level module info.")
 
 user_url = st.text_input("Enter Help Documentation URL")
